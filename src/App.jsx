@@ -54,10 +54,16 @@ function App() {
               onClick={() => {
                 if (num === 1) {
                   window.location.href = 'https://light-and-shadow-art-game.vercel.app'
+                } else if (num === 2) {
+                  window.location.href = 'https://beauty-makeup-match-puzzle.vercel.app/'
+                } else if (num === 5) {
+                  // 使用相对路径，确保在 GitHub Pages 上也能正常工作
+                  const chatGeneratorUrl = 'https://trae-quant.github.io/wechat-chat-generator/'
+                  window.location.href = chatGeneratorUrl
                 }
               }}
             >
-              {num === 1 ? '光影游戏' : num === 2 ? '蔬菜大战' : num === 3 ? '无人机表演' : num === 4 ? 'Deepseek' : num === 5 ? '微信神器' : num === 6 ? '智能抠图' : num}
+              {num === 1 ? '光影游戏' : num === 2 ? '美妆消消乐' : num === 3 ? '无人机表演' : num === 4 ? 'Deepseek' : num === 5 ? '微信神器' : num === 6 ? '智能抠图' : num}
             </button>
           )
         })}
