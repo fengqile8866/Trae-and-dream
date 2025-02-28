@@ -56,14 +56,24 @@ function App() {
                   window.location.href = 'https://light-and-shadow-art-game.vercel.app'
                 } else if (num === 2) {
                   window.location.href = 'https://beauty-makeup-match-puzzle.vercel.app/'
+                } else if (num === 3) {
+                  window.location.href = 'https://github.com/fengqile8866/Drone.git'
+                } else if (num === 4) {
+                  window.location.href = 'https://chat.deepseek.com/'
                 } else if (num === 5) {
-                  // 使用相对路径，确保在 GitHub Pages 上也能正常工作
-                  const chatGeneratorUrl = 'https://trae-quant.github.io/wechat-chat-generator/'
-                  window.location.href = chatGeneratorUrl
+                  window.location.href = 'https://github.com/fengqile8866/weixinchat.git'
+                } else if (num === 6) {
+                  window.location.href = 'https://cephalon.cloud/share/register-landing?invite_id=9C0nEn'
+                } else if (num === 7) {
+                  window.location.href = 'https://www.coze.cn/s/i56gpQFm/'
+                } else if (num === 8) {
+                  window.location.href = 'https://www.coze.cn/s/i56VatYK/'
+                } else if (num === 9) {
+                  window.location.href = 'https://www.coze.cn/s/i56Cp9NS/'
                 }
               }}
             >
-              {num === 1 ? '光影游戏' : num === 2 ? '美妆消消乐' : num === 3 ? '无人机表演' : num === 4 ? 'Deepseek' : num === 5 ? '微信神器' : num === 6 ? '智能抠图' : num}
+              {num === 1 ? '光影游戏' : num === 2 ? '美妆消消乐' : num === 3 ? '无人机表演' : num === 4 ? 'Deepseek' : num === 5 ? '微信神器' : num === 6 ? '端脑云' : num === 7 ? '一键转绘' : num === 8 ? '男神写真' : num === 9 ? '女神写真' : num}
             </button>
           )
         })}

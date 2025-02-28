@@ -362,6 +362,8 @@
     inset 0 0 40px rgba(255, 255, 255, 0.9),
     0 15px 35px rgba(0, 0, 0, 0.5),
     0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
 }
 .circle-button:nth-child(8) { 
   background: linear-gradient(145deg, #3498DB, #5DADE2);
@@ -370,6 +372,301 @@
     inset 0 0 40px rgba(255, 255, 255, 0.9),
     0 15px 35px rgba(0, 0, 0, 0.5),
     0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(9) { 
+  background: linear-gradient(145deg, #2ECC71, #58D68D);
+  box-shadow: 
+    0 0 60px rgba(46, 204, 113, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(10) { 
+  background: linear-gradient(145deg, #E056FD, #E78FFD);
+  box-shadow: 
+    0 0 60px rgba(224, 86, 253, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.special-text {
+  position: relative;
+  z-index: 999;
+  font-size: 72px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 1),
+               0 0 25px rgba(255, 255, 255, 0.8),
+               0 0 35px rgba(255, 255, 255, 0.6),
+               0 0 45px rgba(255, 255, 255, 0.4),
+               2px 2px 6px rgba(0, 0, 0, 0.6);
+  letter-spacing: 4px;
+  animation: specialTextGlow 2s ease-in-out infinite;
+}
+
+@keyframes specialTextGlow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.9));
+    transform: scale(1.1);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    transform: scale(1);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                 -2px -2px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4),
+                 -3px -3px 6px rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                 -2px -2px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(1);
+  }
+}
+
+.circle-button {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 0 60px rgba(33, 150, 243, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transform-origin: calc(var(--x) * -1) calc(var(--y) * -1);
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.circle-button.rotating {
+  animation: orbit 10s linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translate(var(--x), var(--y));
+  }
+  to {
+    transform: rotate(360deg) translate(var(--x), var(--y));
+  }
+}
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.circle-button.rotating {
+  animation: rotate 10s linear infinite;
+}
+
+.circle-button:hover {
+  transform: translate(var(--x), var(--y)) scale(1.3) !important;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+  25% {
+    transform: translate(var(--x), var(--y)) scale(1.1);
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+  75% {
+    transform: translate(var(--x), var(--y)) scale(1.1);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(var(--x), var(--y)) rotate(0deg);
+  }
+  to {
+    transform: translate(var(--x), var(--y)) rotate(360deg);
+  }
+}
+
+.circle-button.active {
+  animation: activeHeartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes activeHeartbeat {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+  25% {
+    transform: translate(var(--x), var(--y)) scale(1.4);
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+  75% {
+    transform: translate(var(--x), var(--y)) scale(1.4);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+}
+
+.circle-button:hover {
+  animation: scaleLoop 1.5s ease-in-out infinite;
+  box-shadow: 
+    0 0 40px rgba(33, 150, 243, 0.6),
+    inset 0 0 25px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleLoop {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+}
+
+.circle-button.active {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 
+      0 0 40px rgba(33, 150, 243, 0.5),
+      inset 0 0 30px rgba(255, 255, 255, 0.9),
+      0 15px 35px rgba(0, 0, 0, 0.3),
+      0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 60px rgba(33, 150, 243, 0.7),
+      inset 0 0 40px rgba(255, 255, 255, 1),
+      0 20px 45px rgba(0, 0, 0, 0.4),
+      0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 40px rgba(33, 150, 243, 0.5),
+      inset 0 0 30px rgba(255, 255, 255, 0.9),
+      0 15px 35px rgba(0, 0, 0, 0.3),
+      0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes mainButtonHeartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 为每个按钮添加独特的渐变色和光效 */
+.circle-button:nth-child(2) { 
+  background: linear-gradient(145deg, #FF6B6B, #FF8E8E);
+  box-shadow: 
+    0 0 60px rgba(255, 107, 107, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(3) { 
+  background: linear-gradient(145deg, #4ECDC4, #45B7AC);
+  box-shadow: 
+    0 0 60px rgba(78, 205, 196, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.circle-button:nth-child(4) { 
+  background: linear-gradient(145deg, #FFD93D, #FFE566);
+  box-shadow: 
+    0 0 60px rgba(255, 217, 61, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(5) { 
+  background: linear-gradient(145deg, #6C5CE7, #8F7FF8);
+  box-shadow: 
+    0 0 60px rgba(108, 92, 231, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.circle-button:nth-child(6) { 
+  background: linear-gradient(145deg, #A8E6CF, #DCEDC1);
+  box-shadow: 
+    0 0 60px rgba(168, 230, 207, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.circle-button:nth-child(7) { 
+  background: linear-gradient(145deg, #FF8B94, #FFA7AF);
+  box-shadow: 
+    0 0 60px rgba(255, 139, 148, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(8) { 
+  background: linear-gradient(145deg, #3498DB, #5DADE2);
+  box-shadow: 
+    0 0 60px rgba(52, 152, 219, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
 }
 .circle-button:nth-child(9) { 
   background: linear-gradient(145deg, #2ECC71, #58D68D);
@@ -623,6 +920,8 @@
     inset 0 0 40px rgba(255, 255, 255, 0.9),
     0 15px 35px rgba(0, 0, 0, 0.5),
     0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
 }
 .circle-button:nth-child(5) { 
   background: linear-gradient(145deg, #6C5CE7, #8F7FF8);
@@ -647,6 +946,8 @@
     inset 0 0 40px rgba(255, 255, 255, 0.9),
     0 15px 35px rgba(0, 0, 0, 0.5),
     0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
 }
 .circle-button:nth-child(8) { 
   background: linear-gradient(145deg, #3498DB, #5DADE2);
@@ -655,6 +956,301 @@
     inset 0 0 40px rgba(255, 255, 255, 0.9),
     0 15px 35px rgba(0, 0, 0, 0.5),
     0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(9) { 
+  background: linear-gradient(145deg, #2ECC71, #58D68D);
+  box-shadow: 
+    0 0 60px rgba(46, 204, 113, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(10) { 
+  background: linear-gradient(145deg, #E056FD, #E78FFD);
+  box-shadow: 
+    0 0 60px rgba(224, 86, 253, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.special-text {
+  position: relative;
+  z-index: 999;
+  font-size: 72px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 1),
+               0 0 25px rgba(255, 255, 255, 0.8),
+               0 0 35px rgba(255, 255, 255, 0.6),
+               0 0 45px rgba(255, 255, 255, 0.4),
+               2px 2px 6px rgba(0, 0, 0, 0.6);
+  letter-spacing: 4px;
+  animation: specialTextGlow 2s ease-in-out infinite;
+}
+
+@keyframes specialTextGlow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.9));
+    transform: scale(1.1);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    transform: scale(1);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                 -2px -2px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4),
+                 -3px -3px 6px rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                 -2px -2px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(1);
+  }
+}
+
+.circle-button {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 0 60px rgba(33, 150, 243, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transform-origin: calc(var(--x) * -1) calc(var(--y) * -1);
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.circle-button.rotating {
+  animation: orbit 10s linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translate(var(--x), var(--y));
+  }
+  to {
+    transform: rotate(360deg) translate(var(--x), var(--y));
+  }
+}
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.circle-button.rotating {
+  animation: rotate 10s linear infinite;
+}
+
+.circle-button:hover {
+  transform: translate(var(--x), var(--y)) scale(1.3) !important;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+  25% {
+    transform: translate(var(--x), var(--y)) scale(1.1);
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+  75% {
+    transform: translate(var(--x), var(--y)) scale(1.1);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(var(--x), var(--y)) rotate(0deg);
+  }
+  to {
+    transform: translate(var(--x), var(--y)) rotate(360deg);
+  }
+}
+
+.circle-button.active {
+  animation: activeHeartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes activeHeartbeat {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+  25% {
+    transform: translate(var(--x), var(--y)) scale(1.4);
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+  75% {
+    transform: translate(var(--x), var(--y)) scale(1.4);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+}
+
+.circle-button:hover {
+  animation: scaleLoop 1.5s ease-in-out infinite;
+  box-shadow: 
+    0 0 40px rgba(33, 150, 243, 0.6),
+    inset 0 0 25px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleLoop {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+}
+
+.circle-button.active {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 
+      0 0 40px rgba(33, 150, 243, 0.5),
+      inset 0 0 30px rgba(255, 255, 255, 0.9),
+      0 15px 35px rgba(0, 0, 0, 0.3),
+      0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 60px rgba(33, 150, 243, 0.7),
+      inset 0 0 40px rgba(255, 255, 255, 1),
+      0 20px 45px rgba(0, 0, 0, 0.4),
+      0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 40px rgba(33, 150, 243, 0.5),
+      inset 0 0 30px rgba(255, 255, 255, 0.9),
+      0 15px 35px rgba(0, 0, 0, 0.3),
+      0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes mainButtonHeartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 为每个按钮添加独特的渐变色和光效 */
+.circle-button:nth-child(2) { 
+  background: linear-gradient(145deg, #FF6B6B, #FF8E8E);
+  box-shadow: 
+    0 0 60px rgba(255, 107, 107, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(3) { 
+  background: linear-gradient(145deg, #4ECDC4, #45B7AC);
+  box-shadow: 
+    0 0 60px rgba(78, 205, 196, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.circle-button:nth-child(4) { 
+  background: linear-gradient(145deg, #FFD93D, #FFE566);
+  box-shadow: 
+    0 0 60px rgba(255, 217, 61, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(5) { 
+  background: linear-gradient(145deg, #6C5CE7, #8F7FF8);
+  box-shadow: 
+    0 0 60px rgba(108, 92, 231, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.circle-button:nth-child(6) { 
+  background: linear-gradient(145deg, #A8E6CF, #DCEDC1);
+  box-shadow: 
+    0 0 60px rgba(168, 230, 207, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.circle-button:nth-child(7) { 
+  background: linear-gradient(145deg, #FF8B94, #FFA7AF);
+  box-shadow: 
+    0 0 60px rgba(255, 139, 148, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(8) { 
+  background: linear-gradient(145deg, #3498DB, #5DADE2);
+  box-shadow: 
+    0 0 60px rgba(52, 152, 219, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
 }
 .circle-button:nth-child(9) { 
   background: linear-gradient(145deg, #2ECC71, #58D68D);
@@ -672,3 +1268,228 @@
     0 15px 35px rgba(0, 0, 0, 0.5),
     0 5px 15px rgba(0, 0, 0, 0.4);
 }
+.special-text {
+  position: relative;
+  z-index: 999;
+  font-size: 72px;
+  font-weight: bold;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 1),
+               0 0 25px rgba(255, 255, 255, 0.8),
+               0 0 35px rgba(255, 255, 255, 0.6),
+               0 0 45px rgba(255, 255, 255, 0.4),
+               2px 2px 6px rgba(0, 0, 0, 0.6);
+  letter-spacing: 4px;
+  animation: specialTextGlow 2s ease-in-out infinite;
+}
+
+@keyframes specialTextGlow {
+  0% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 15px rgba(255, 105, 180, 0.9));
+    transform: scale(1.1);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px rgba(0, 255, 255, 0.7));
+    transform: scale(1);
+  }
+}
+
+@keyframes textGlow {
+  0% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                 -2px -2px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4),
+                 -3px -3px 6px rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+  }
+  100% {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                 -2px -2px 4px rgba(255, 255, 255, 0.3);
+    transform: scale(1);
+  }
+}
+
+.circle-button {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 
+    0 0 60px rgba(33, 150, 243, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  transform-origin: calc(var(--x) * -1) calc(var(--y) * -1);
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.circle-button.rotating {
+  animation: orbit 10s linear infinite;
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translate(var(--x), var(--y));
+  }
+  to {
+    transform: rotate(360deg) translate(var(--x), var(--y));
+  }
+}
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+.circle-button.rotating {
+  animation: rotate 10s linear infinite;
+}
+
+.circle-button:hover {
+  transform: translate(var(--x), var(--y)) scale(1.3) !important;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+  25% {
+    transform: translate(var(--x), var(--y)) scale(1.1);
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+  75% {
+    transform: translate(var(--x), var(--y)) scale(1.1);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(var(--x), var(--y)) rotate(0deg);
+  }
+  to {
+    transform: translate(var(--x), var(--y)) rotate(360deg);
+  }
+}
+
+.circle-button.active {
+  animation: activeHeartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes activeHeartbeat {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+  25% {
+    transform: translate(var(--x), var(--y)) scale(1.4);
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+  75% {
+    transform: translate(var(--x), var(--y)) scale(1.4);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+}
+
+.circle-button:hover {
+  animation: scaleLoop 1.5s ease-in-out infinite;
+  box-shadow: 
+    0 0 40px rgba(33, 150, 243, 0.6),
+    inset 0 0 25px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes scaleLoop {
+  0% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+  50% {
+    transform: translate(var(--x), var(--y)) scale(1.3);
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) scale(1);
+  }
+}
+
+.circle-button.active {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 
+      0 0 40px rgba(33, 150, 243, 0.5),
+      inset 0 0 30px rgba(255, 255, 255, 0.9),
+      0 15px 35px rgba(0, 0, 0, 0.3),
+      0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+  50% {
+    box-shadow: 
+      0 0 60px rgba(33, 150, 243, 0.7),
+      inset 0 0 40px rgba(255, 255, 255, 1),
+      0 20px 45px rgba(0, 0, 0, 0.4),
+      0 8px 20px rgba(0, 0, 0, 0.3);
+  }
+  100% {
+    box-shadow: 
+      0 0 40px rgba(33, 150, 243, 0.5),
+      inset 0 0 30px rgba(255, 255, 255, 0.9),
+      0 15px 35px rgba(0, 0, 0, 0.3),
+      0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@keyframes mainButtonHeartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.05);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 为每个按钮添加独特的渐变色和光效 */
+.circle-button:nth-child(2) { 
+  background: linear-gradient(145deg, #FF6B6B, #FF8E8E);
+  box-shadow: 
+    0 0 60px rgba(255, 107, 107, 0.7),
+    inset 0 0 40px rgba(255, 255, 255, 0.9),
+    0 15px 35px rgba(0, 0, 0, 0.5),
+    0 5px 15px rgba(0, 0, 0, 0.4);
+  color: white;
+  font-size: 32px;
+}
+.circle-button:nth-child(3) { 
+  background: linear-gradient(145deg, #4ECDC4, #45B7AC);
+  box-shadow: 
+    0 0 60px rgba(78, 205, 196, 0
